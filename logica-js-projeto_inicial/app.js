@@ -1,11 +1,11 @@
 alert('Boas vindas ao jogo do número secreto!');
-let numeroSecreto = 5;
+let numeroSecreto = parseInt(Math.random() * 100 + 1);
 let chute;
 let tentativas = 1;
 
 // enquanto chute não for igual !=
   while (chute!= numeroSecreto) {
-      chute = prompt('Escolha um número entre 1 e 10');
+      chute = prompt('Escolha um número entre 1 e 100');
       if (chute == numeroSecreto){
         break;
     } else {
@@ -18,8 +18,11 @@ let tentativas = 1;
         tentativas++;
     }
   }
-  if(tentativas > 1){
-alert(`Parabéns, você acertou o número secreto ${numeroSecreto} com ${tentativas} tentativas.`);
-} else {
-  alert(`Parabéns, você acertou o número secreto ${numeroSecreto} com ${tentativas} tentativa.`);
-}
+  let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
+  alert(`Parabéns, você acertou o número secreto (${numeroSecreto}) com ${tentativas} ${palavraTentativa}.`);
+
+  //if(tentativas > 1){
+//alert(`Parabéns, você acertou o número secreto (${numeroSecreto}) com ${tentativas} tentativas.`);
+//} else {
+  //alert(`Parabéns, você acertou o número secreto (${numeroSecreto}) com ${tentativas} tentativa.`);
+//}
